@@ -15,7 +15,6 @@ type Response struct {
 
 func GetJSON(user_id int, pool_slug string, hash_key string) (target Response) {
 	url := fmt.Sprintf("https://konfett.io/c/%d/%s/%s/jsonverbose", user_id, pool_slug, hash_key)
-	fmt.Println(url)
 	r, err := http.Get(url)
 	if err != nil {
 		log.Printf("error getting value from url: %s\n", err.Error())
@@ -27,7 +26,6 @@ func GetJSON(user_id int, pool_slug string, hash_key string) (target Response) {
 
 func GetText(user_id int, pool_slug string, hash_key string) (target string) {
 	url := fmt.Sprintf("https://konfett.io/c/%d/%s/%s/text", user_id, pool_slug, hash_key)
-	fmt.Println(url)
 	r, err := http.Get(url)
 	if err != nil {
 		log.Printf("error getting value from url: %s\n", err.Error())
